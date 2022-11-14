@@ -1,4 +1,5 @@
 export class Stage{
+
     /**
      * 阶段类，如：一月上
      * @private
@@ -14,5 +15,10 @@ export class Stage{
     // @ts-ignore
     get eventIds(): Array<number> {
         return this._eventIds;
+    }
+
+    // @ts-ignore
+    get id(): number {
+        return this._id;
     }
 }

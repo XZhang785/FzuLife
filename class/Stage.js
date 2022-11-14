@@ -13,6 +13,14 @@ var Stage = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    Object.defineProperty(Stage.prototype, "id", {
+        // @ts-ignore
+        get: function () {
+            return this._id;
+        },
+        enumerable: false,
+        configurable: true
+    });
     return Stage;
 }());
 exports.Stage = Stage;

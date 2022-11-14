@@ -4,19 +4,30 @@ export class LifeEvent {
     private _id: number; // id标识符
     private _content: string; // 事件内容
     private _achievementIdList: Array<number>; // 触发成就id的列表,可以为None
-    private _done: boolean; // 事件是否已经触发,1为触发,0为，没触发过
+    private _done: boolean; // 事件是否已经触发,true为触发,false为没触发过
     private _propertyChange: Array<number>; // 引起的属性变化,6长的数组，没变化就全置0
     private _imgUrl: string; // 图片的连接,可以为None
-    private _type: string; // 类别：6个属性，阶段事件，学院事件
+    private _type: string; // 类别：6个属性，阶段事件，专业事件
     private _stageId: number; // 阶段id
     private _noHappenList: Array<number>; // 后续不触发事件的id列表，可以为None
     private _happenList: Array<number>;// 后续触发事件的id列表,可以为None
-    private _gameOver: boolean; // 是否引起游戏的结束, 0为结束，1为未结束
+    private _gameOver: boolean; // 是否引起游戏的结束, 0为未结束，1为结束
+    private _rating: string; // 事件的等级，分为差劲，平凡，超凡。
 
     constructor() {
         /**
          * 构造函数
          */
+    }
+
+    // @ts-ignore
+    get stageId(): number {
+        return this._stageId;
+    }
+
+    // @ts-ignore
+    get type(): string {
+        return this._type;
     }
 
     // @ts-ignore

@@ -49,6 +49,11 @@ var Life = /** @class */ (function () {
             this.updateProperties(_talent.propertiesChange);
         }
     };
+    Life.prototype.activateAchievement = function (achievementIdList) {
+        /**
+         * 触发成就
+         */
+    };
     Life.prototype.genEvent = function (stage) {
         /**
          * 事件迭代
@@ -77,6 +82,7 @@ var Life = /** @class */ (function () {
         // 更新参数
         this.updateStartEventIds(event); // 更新初始候选事件id
         this._invalidEventIds.concat(event.noHappenList); // 将先导事件更新如不会发生的事件中
+        this._invalidEventIds.concat(eventId); // 保证发生过的事情不会再发生
         this.updateProperties(event.propertyChange); // 更改属性值
         this._lifeOver = event.gameOver; // 检查是否人生结束
         // 触发成就

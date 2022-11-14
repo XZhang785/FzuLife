@@ -13,6 +13,30 @@ var Major = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    Object.defineProperty(Major.prototype, "type", {
+        // @ts-ignore
+        get: function () {
+            return this._type;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Major.prototype, "name", {
+        // @ts-ignore
+        get: function () {
+            return this._name;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Major.prototype, "id", {
+        // @ts-ignore
+        get: function () {
+            return this._id;
+        },
+        enumerable: false,
+        configurable: true
+    });
     return Major;
 }());
 exports.Major = Major;

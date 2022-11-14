@@ -1,7 +1,7 @@
 import {Stage} from "./Stage";
 import {LifeEvent} from "./LifeEvent";
 import {activateAchievement} from "../gameTool";
-import {Major} from "./Major";
+import {Academy} from "./Academy";
 import {Talent} from "./Talent";
 
 export class Life {
@@ -12,13 +12,13 @@ export class Life {
     private _lifeOver: Boolean // 人生是否结束
     private _startEventIds: Array<number> // 每个阶段的初始候选事件id
     private _invalidEventIds: Array<number> // 人生中不会发生的事件的id列表
-    private _major: Major // 本局人生的专业
+    private _major: Academy // 本局人生的专业
     private _talents: Array<Talent> // 本局天赋
     // @ts-ignore
     private _eventMap: Map<number, LifeEvent> // 初始化事件id与事件的映射
 
     // @ts-ignore
-    constructor(properties: Array<number>, major: Major, talents: Array<Talent>, eventMap: Map<number, LifeEvent>) {
+    constructor(properties: Array<number>, major: Academy, talents: Array<Talent>, eventMap: Map<number, LifeEvent>) {
 
         /**
          * 构造函数
@@ -70,6 +70,12 @@ export class Life {
         }
     }
 
+    activateAchievement(achievementIdList: Array<number>){
+        /**
+         * 触发成就
+         */
+    }
+
     genEvent(stage: Stage) {
         /**
          * 事件迭代
@@ -102,6 +108,7 @@ export class Life {
         // 更新参数
         this.updateStartEventIds(event) // 更新初始候选事件id
         this._invalidEventIds.concat(event.noHappenList) // 将先导事件更新如不会发生的事件中
+        this._invalidEventIds.concat(eventId) // 保证发生过的事情不会再发生
         this.updateProperties(event.propertyChange) // 更改属性值
         this._lifeOver = event.gameOver // 检查是否人生结束
 

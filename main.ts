@@ -2,7 +2,7 @@ import {setEventMap, userAuthenticate, setAchievementMap} from "./gameTool";
 import {Talent} from "./class/Talent";
 import {Life} from "./class/Life";
 import {Stage} from "./class/Stage";
-import {Major} from "./class/Major";
+import {Academy} from "./class/Academy";
 
 // 访问游戏
 let data = null // 还没想好先用null代替
@@ -17,7 +17,7 @@ let majorPool = null
 
 // 开始游戏
 // 初始化
-let major: Major = selectMajor() // 选择专业
+let major: Academy = selectMajor() // 选择专业
 let property: Array<number> = allocateProperties() // 分配属性
 let talents: Array<Talent> = selectTalent() // 选择天赋
 let stageGen: Iterable<Stage> = getStageGen() // 初始化阶段迭代器

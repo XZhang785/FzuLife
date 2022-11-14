@@ -7,6 +7,22 @@ var LifeEvent = /** @class */ (function () {
          * 构造函数
          */
     }
+    Object.defineProperty(LifeEvent.prototype, "stageId", {
+        // @ts-ignore
+        get: function () {
+            return this._stageId;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(LifeEvent.prototype, "type", {
+        // @ts-ignore
+        get: function () {
+            return this._type;
+        },
+        enumerable: false,
+        configurable: true
+    });
     Object.defineProperty(LifeEvent.prototype, "happenList", {
         // @ts-ignore
         get: function () {
